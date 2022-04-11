@@ -228,6 +228,9 @@ export const SQL_FILTER_TEMPLATES: any = {
     'severity.info': `metadata.level = 'info'`,
     'severity.debug': `metadata.level = 'debug'`,
   },
+  auth_logs: {
+    ..._SQL_FILTER_COMMON,
+  },
 }
 
 // export const cleanQuery = (str: string) => str.replaceAll(/\n/g, ' ')
@@ -239,6 +242,7 @@ export enum LogsTableName {
   POSTGRES = 'postgres_logs',
   FUNCTIONS = 'function_logs',
   FN_EDGE = 'function_edge_logs',
+  AUTH = 'auth_logs',
 }
 
 export const LOGS_TABLES = {
@@ -246,6 +250,7 @@ export const LOGS_TABLES = {
   database: LogsTableName.POSTGRES,
   functions: LogsTableName.FUNCTIONS,
   fn_edge: LogsTableName.FN_EDGE,
+  auth: LogsTableName.AUTH
 }
 
 export const LOGS_SOURCE_DESCRIPTION = {
@@ -253,6 +258,7 @@ export const LOGS_SOURCE_DESCRIPTION = {
   [LogsTableName.POSTGRES]: 'Database logs obtained directly from Postgres.',
   [LogsTableName.FUNCTIONS]: 'Function logs generated from runtime execution.',
   [LogsTableName.FN_EDGE]: 'Function call logs, containing the request and response.',
+  [LogsTableName.AUTH]: 'Authentication logs from GoTrue',
 }
 
 export const genCountQuery = (table: string): string => `SELECT count(*) as count FROM ${table}`
