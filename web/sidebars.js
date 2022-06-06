@@ -13,7 +13,7 @@ module.exports = {
   supabaseClient: [
     {
       type: 'category',
-      label: 'Javascript',
+      label: 'JavaScript',
       collapsed: false,
       items: supabaseClient.docs,
     },
@@ -65,6 +65,7 @@ module.exports = {
         'guides/with-redwoodjs',
         'guides/with-solidjs',
         'guides/with-svelte',
+        'guides/with-sveltekit',
         'guides/with-vue-3',
       ],
     },
@@ -110,7 +111,7 @@ module.exports = {
       type: 'category',
       label: 'APIs',
       collapsed: false,
-      items: ['guides/api'],
+      items: ['guides/api', 'guides/api/generating-types'],
     },
     {
       type: 'category',
@@ -183,7 +184,7 @@ module.exports = {
       type: 'category',
       label: 'Platform',
       collapsed: false,
-      items: ['guides/platform/logs', 'going-into-prod'],
+      items: ['guides/platform/logs', 'guides/platform/metrics', 'going-into-prod', 'guides/platform/performance'],
     },
     {
       type: 'category',
@@ -205,6 +206,7 @@ module.exports = {
         'guides/integrations/prisma',
         'guides/integrations/snaplet',
         'guides/integrations/stytch',
+        'guides/integrations/supertokens',
         'guides/integrations/vercel',
       ],
     },

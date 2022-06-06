@@ -52,7 +52,7 @@ export const getURL = () => {
       ? process.env.NEXT_PUBLIC_SITE_URL
       : process?.env?.VERCEL_URL && process.env.VERCEL_URL !== ''
       ? process.env.VERCEL_URL
-      : 'https://app.supabase.io'
+      : 'https://app.supabase.com'
   return url.includes('http') ? url : `https://${url}`
 }
 
@@ -196,5 +196,17 @@ export async function passwordStrength(value: string) {
     message,
     warning,
     strength,
+  }
+}
+
+export const detectBrowser = () => {
+  if (!navigator) return undefined
+
+  if (navigator.userAgent.indexOf('Chrome') !== -1) {
+    return 'Chrome'
+  } else if (navigator.userAgent.indexOf('Firefox') !== -1) {
+    return 'Firefox'
+  } else if (navigator.userAgent.indexOf('Safari') !== -1) {
+    return 'Safari'
   }
 }
